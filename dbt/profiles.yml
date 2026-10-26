@@ -1,0 +1,10 @@
+# Local DuckDB warehouse. No credentials needed, so this file is safe to commit.
+# dbt reads profiles.yml from the current folder first, so run dbt from inside dbt/.
+kroma:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../warehouse/kroma.duckdb
+      schema: main
+      threads: 4

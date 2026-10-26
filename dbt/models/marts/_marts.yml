@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: One row per order with revenue, status and the user's order sequence.
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+  - name: dim_users
+    description: One row per user with acquisition attributes and lifetime purchase summary.
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+  - name: dim_products
+    columns:
+      - name: product_id
+        data_tests: [unique, not_null]
+  - name: fct_sessions
+    description: One row per session with funnel flags, time to purchase and attributed revenue.
+    columns:
+      - name: session_id
+        data_tests: [unique, not_null]
+      - name: user_id
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_users'), field: user_id}
+  - name: mart_funnel_weekly
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments: {combination_of_columns: ['session_week', 'device', 'channel', 'visitor_type']}
+  - name: mart_acquisition_monthly
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments: {combination_of_columns: ['first_visit_month', 'acquisition_channel']}
+  - name: mart_cohort_retention
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments: {combination_of_columns: ['first_order_month', 'months_since_first_order']}
+      - dbt_utils.expression_is_true:
+          arguments: {expression: "retention_rate between 0 and 1"}
+  - name: mart_rfm
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: rfm_segment
+        data_tests: [not_null]
+  - name: fct_experiment_users
+    description: One row per exposed user in the checkout experiment (input to the Day 10 analysis).
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: variant
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['control', 'treatment']}

@@ -153,7 +153,7 @@ assignments = pd.DataFrame({
 })
 
 # daily paid marketing spend
-paid_cpc = {"paid_search": 0.62, "paid_social": 0.48, "affiliate": 0.35}
+paid_cpc = {"paid_search": 1.55, "paid_social": 1.20, "affiliate": 0.95}
 per_day = pd.DataFrame({"d": DAYS[s_day].date, "ch": s_channel}).value_counts()
 rows = []
 for (d, ch), n in per_day.items():

@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Synthetic Kroma marketplace source tables, loaded from Parquet by scripts/load_to_duckdb.py.
+    tables:
+      - name: raw_users
+        columns:
+          - name: user_id
+            data_tests: [unique, not_null]
+      - name: raw_sessions
+        columns:
+          - name: session_id
+            data_tests: [unique, not_null]
+      - name: raw_events
+        columns:
+          - name: event_id
+            data_tests: [unique, not_null]
+      - name: raw_orders
+        columns:
+          - name: order_id
+            data_tests: [unique, not_null]
+      - name: raw_order_items
+      - name: raw_products
+        columns:
+          - name: product_id
+            data_tests: [unique, not_null]
+      - name: raw_sellers
+        columns:
+          - name: seller_id
+            data_tests: [unique, not_null]
+      - name: raw_experiment_assignments
+        columns:
+          - name: user_id
+            data_tests: [unique, not_null]
+      - name: raw_marketing_spend
