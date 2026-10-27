@@ -1,0 +1,119 @@
+{
+  "srm": {
+    "control_users": 16400,
+    "treatment_users": 16250,
+    "p_value": 0.4064614431938376,
+    "passed": 1.0
+  },
+  "primary": {
+    "control_rate": 0.07042682926829268,
+    "treatment_rate": 0.07698461538461539,
+    "diff_pp": 0.6557786116322711,
+    "ci_low_pp": 0.08891324577031107,
+    "ci_high_pp": 1.223201484588812,
+    "relative_lift": 0.0931148851148853,
+    "p_value": 0.0233492746013932
+  },
+  "revenue_per_user": {
+    "control": 8.787343902439025,
+    "treatment": 10.130984,
+    "diff": 1.343640097560975,
+    "ci_low": 0.2000769689024367,
+    "ci_high": 2.4964286004221394,
+    "mann_whitney_p": 0.03326671586943426
+  },
+  "checkout_completion": {
+    "control_rate": 0.6056910569105691,
+    "treatment_rate": 0.6747799067840498,
+    "diff_pp": 6.908884987348063,
+    "ci_low_pp": 3.897388245521881,
+    "ci_high_pp": 9.901710312796094,
+    "relative_lift": 0.11406615482467264,
+    "p_value": 7.011418113421743e-06
+  },
+  "guardrail_aov": {
+    "control": 124.02103270223752,
+    "treatment": 130.24405854430378,
+    "diff": 6.223025842066264,
+    "ci_low": -5.234287622006999,
+    "ci_high": 17.728274236298724,
+    "breach": 0.0
+  },
+  "guardrail_cancel_return": {
+    "control_rate": 0.057885906040268456,
+    "treatment_rate": 0.07214121258633922,
+    "diff_pp": 1.4255306546070767,
+    "ci_low_pp": -0.5277498274182064,
+    "ci_high_pp": 3.366556293565201,
+    "relative_lift": 0.2462655855495124,
+    "p_value": 0.15005355678932922,
+    "breach": 0.0
+  },
+  "segments": {
+    "bonferroni_alpha": 0.016666666666666666,
+    "mobile": {
+      "control_rate": 0.0597162002364998,
+      "treatment_rate": 0.06938734583375113,
+      "diff_pp": 0.9671145597251324,
+      "ci_low_pp": 0.2881212466790562,
+      "ci_high_pp": 1.6478357597425497,
+      "relative_lift": 0.16195179128862458,
+      "p_value": 0.005237434417293793,
+      "control_users": 10148,
+      "treatment_users": 9973,
+      "significant_after_bonferroni": 1.0
+    },
+    "desktop": {
+      "control_rate": 0.09068627450980392,
+      "treatment_rate": 0.08909774436090226,
+      "diff_pp": -0.15885301489016596,
+      "ci_low_pp": -1.2480375248172109,
+      "ci_high_pp": 0.9299717742176759,
+      "relative_lift": -0.01751676488518583,
+      "p_value": 0.7747072928576935,
+      "control_users": 5304,
+      "treatment_users": 5320,
+      "significant_after_bonferroni": 0.0
+    },
+    "tablet": {
+      "control_rate": 0.07172995780590717,
+      "treatment_rate": 0.08881922675026123,
+      "diff_pp": 1.7089268944354057,
+      "ci_low_pp": -0.7431314745427426,
+      "ci_high_pp": 4.170776169956977,
+      "relative_lift": 0.23824451410658298,
+      "p_value": 0.17000027010816354,
+      "control_users": 948,
+      "treatment_users": 957,
+      "significant_after_bonferroni": 0.0
+    }
+  },
+  "by_assignment_week": {
+    "2025-11-03": {
+      "users": 10977,
+      "diff_pp": 1.4683515258357787,
+      "ci_low_pp": 0.37816716828101576,
+      "ci_high_pp": 2.5604420138195856
+    },
+    "2025-11-10": {
+      "users": 8584,
+      "diff_pp": 0.8656246859946579,
+      "ci_low_pp": -0.2586729232798698,
+      "ci_high_pp": 1.9916444030828893
+    },
+    "2025-11-17": {
+      "users": 6949,
+      "diff_pp": -0.7353136138290639,
+      "ci_low_pp": -1.8860751915733034,
+      "ci_high_pp": 0.41638355060081533
+    },
+    "2025-11-24": {
+      "users": 6140,
+      "diff_pp": 0.4944392035539355,
+      "ci_low_pp": -0.5532295113445594,
+      "ci_high_pp": 1.5446393955136801
+    }
+  },
+  "decision": "Ship, and keep measuring: the lift is real, but the interval includes effects smaller than the MDE.",
+  "mde_pp": 1.0
+}
