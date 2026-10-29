@@ -27,4 +27,4 @@ python scripts/load_to_duckdb.py     # loads warehouse/kroma.duckdb and prints a
 - [x] Day 8 — business questions, metric spec, experiment design, data model, synthetic data, DuckDB load
 - [x] Day 9 — dbt models: sessions, funnel, acquisition, cohorts, RFM
 - [x] Day 10 — A/B test analysis (SRM, z-test, bootstrap, segments) and regression
-- [ ] Day 11 — dashboard, recommendation memo, README findings, v1.0
+- [X] Day 11 — dashboard, recommendation memo, README findings, v1.0
